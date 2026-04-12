@@ -1,0 +1,50 @@
+menu "AI Voice Chat Configuration"
+
+    config DEEPSEEK_API_KEY
+        string "DeepSeek API Key"
+        default "sk-your-api-key-here"
+        help
+            Your DeepSeek API key. Get it from https://platform.deepseek.com
+            
+            DeepSeek supports Chat API (国内可直接访问，无需代理)
+
+    config XFYUN_APP_ID
+        string "Xunfei APPID"
+        default "9965b786"
+        help
+            APPID for Xunfei IAT WebSocket service.
+
+    config XFYUN_API_KEY
+        string "Xunfei APIKey"
+        default "7da3c8e99398ef8c47d24c9753d27bb5"
+        help
+            APIKey for Xunfei IAT WebSocket service.
+
+    config XFYUN_API_SECRET
+        string "Xunfei APISecret"
+        default "NjVlYmVmZjQzOWYyNTgwOTBiNWUyOWNj"
+        help
+            APISecret for Xunfei IAT WebSocket service.
+            
+    config AI_CHAT_RECORD_TIME
+        int "Recording time in seconds"
+        default 8
+        range 1 60
+        help
+            Maximum recording time for each voice input (1-60 seconds).
+            
+    config AI_CHAT_TTS_VOICE
+        string "TTS Voice Selection"
+        default "nova"
+        help
+            OpenAI TTS voice to use for AI responses.
+            
+            Available voices:
+            - alloy: Neutral and balanced
+            - echo: Male voice
+            - fable: British accent
+            - onyx: Deep male voice
+            - nova: Female voice (default)
+            - shimmer: Warm female voice
+
+endmenu
